@@ -1,8 +1,11 @@
 {
   "name": "arDemo",
-  "version": "1.0.0",
-  "description": "",
+  "description": "Our sample Node to Heroku app",
   "main": "server.js",
-  "keywords": [],
-  "author": "Chance King",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "~4.9.8"
+  }
 }
