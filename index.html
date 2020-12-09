@@ -1,18 +1,40 @@
 <html>
-  <head>
+
+<head>
+    <title>Welcome to your VR experience</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-  </head>
-  <body>
-    <a-scene>
-      <a-plane position="0 4 -4.5" rotation="0 0 0" width="6" height="3" color="#7BC8A4"></a-plane>
-      <a-text color="#ff6ec7"  position="0 4.5 -4" align="center" value="Welcome to my VR World, accessible via any browser!"></a-text>
-      <a-text color="#000" position="0 3.5 -4" align="center" value="Feel free to look around using a VR headset, or drag the mouse and use the WASD to move if on Desktop"></a-text>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="40" height="40" color="#7BC8A4"></a-plane>
-      <a-sky color="#ff6ec7"></a-sky>
-     
+    <!-- used for 3d text, not available in regualar aframe -->
+    <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script> 
+</head>
+
+<body>
+    <a-scene loading-screen="dotsColor: blue; backgroundColor: black">
+        
+        <a-entity scale="1 1 1" geometry="primitive: torusKnot" position="-5 3 -4" material="color: blue; metalness:.3; roughness: 0.1;" animation="easing: linear; property: rotation; dur:10000; loop: true; to: 0 0 360;">
+        </a-entity>
+
+        <a-entity scale="1 1 1" geometry="primitive: torus" position="5 3 -4" material="color: red; metalness:.3; roughness: 0.1;" animation="easing: linear; property: rotation; dur:7500; loop: true; to: 0 180; ">
+        </a-entity>
+        
+
+        
+        <a-plane position="0 4 -7.5" rotation="0 0 0" width="16" height="10" color="#000"></a-plane>
+        <a-entity align="center" material="color: #ff6ec7" position="-4.5 5.5 -6" text-geometry="value: Chance's Virtual Reality Demo"></a-entity>
+        <a-text scale="1.5 1.5 1.5" color="#ff6ec7" position="0 4.5 -6" align="center"
+            value="Welcome to my VR World, accessible via any browser!"></a-text>
+        <a-text scale="1.5 1.5 1.5" color="#ff6ec7" position="0 3.5 -6" align="center"
+            value="Look around using a VR headset, or use the mouse and WASD keys on desktop">
+        </a-text>
+        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="15" height="6" color="#ff6ec7"></a-plane>
+        <a-entity camera look-controls wasd-controls="acceleration:400" position="0 2.6 3">
+            
+        </a-entity>
+        <a-sky id="background-img" color="#6EBAA7"></a-sky>
+
     </a-scene>
-  </body>
+</body>
+
 </html>
